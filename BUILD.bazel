@@ -1,0 +1,16 @@
+load("@rules_jvm_external//:defs.bzl", "java_export")
+load("@rules_jvm_external//:kt_defs.bzl", "kt_jvm_export")
+
+library_version = "0.0.1"
+
+java_export(
+    name = "exported_proto_jar",
+    srcs = glob(["*.java"]),
+    maven_coordinates = "com.zharguy.protos:protos:{}".format(library_version),
+    runtime_deps = [
+        "//script:scripts_proto_java_lib",
+        "//script:scripts_proto_kt_grpc_lib",
+        "//script:scripts_proto_kt_lib",
+        "@maven//:javax_annotation_javax_annotation_api",
+    ],
+)
