@@ -8,9 +8,9 @@ java_export(
     srcs = glob(["*.java"]),
     maven_coordinates = "com.zharguy.protos:protos:{}".format(library_version),
     runtime_deps = [
-        "//script:scripts_proto_java_lib",
-        "//script:scripts_proto_kt_grpc_lib",
-        "//script:scripts_proto_kt_lib",
+        "//script:script_service_proto_java_lib",
+        "//script:script_service_proto_kt_grpc_lib",
+        "//script:script_service_proto_kt_lib",
         "@maven//:javax_annotation_javax_annotation_api",
     ],
 )

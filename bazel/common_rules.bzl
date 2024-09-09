@@ -15,7 +15,7 @@ def service_proto_export(name, srcs = None, proto_deps = None):
 
     native.java_proto_library(
         name = "{}_proto_java_lib".format(name),
-        deps = [":script_proto"],
+        deps = ["{}_proto".format(name)],
     )
 
     kt_jvm_proto_library(
@@ -24,7 +24,7 @@ def service_proto_export(name, srcs = None, proto_deps = None):
     )
 
     kt_jvm_grpc_library(
-        name = "scripts_proto_kt_grpc_lib",
+        name = "{}_proto_kt_grpc_lib".format(name),
         srcs = ["{}_proto".format(name)],
         deps = ["{}_proto_java_lib".format(name)],
     )
