@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts";
+
+package com.zharguy.protos.scripts;
+
+import "scripts/models/script.proto";
+
+service ScriptService {
+  rpc CreateScript (CreateScriptRequest) returns (Script) {}
+  rpc GetScript (GetScriptRequest) returns (Script) {}
+  rpc DeleteScript (GetScriptRequest) returns (Script) {}
+}
+
+message CreateScriptRequest {
+  Script script = 1;
+}
+
+message GetScriptRequest {
+  string id = 1;
+}

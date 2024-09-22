@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts";
+
+package com.zharguy.protos.scripts;
+
+enum CharacterType {
+  CHARACTER_TYPE_UNKNOWN = 0;
+  CHARACTER_TYPE_NORMAL = 1;
+  CHARACTER_TYPE_SKELETON = 2;
+  CHARACTER_TYPE_ROBOT = 3;
+}

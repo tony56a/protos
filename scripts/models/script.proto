@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts";
+
+package com.zharguy.protos.scripts;
+
+import "google/protobuf/wrappers.proto";
+import "common/models/user.proto";
+import "google/protobuf/timestamp.proto";
+import "scripts/enums/script_type.proto";
+import "scripts/enums/character_type.proto";
+import "scripts/models/script_guest_character.proto";
+import "scripts/models/script_content_line.proto";
+
+message Script {
+  google.protobuf.StringValue id = 1;
+  string request_id = 2;
+  google.protobuf.Timestamp requested_at = 3;
+  common.User requesting_user = 4;
+  string topic = 5;
+  scripts.ScriptType script_type = 6;
+  repeated ScriptGuestCharacter characters = 7;
+  repeated ScriptContentLine script_lines = 8;
+}
