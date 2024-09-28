@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.zharguy.protos.scripts";
+option java_package = "com.zharguy.protos.scripts.enums";
 
-package com.zharguy.protos.scripts;
+package com.zharguy.protos.scripts.enums;
 
 enum CharacterType {
   CHARACTER_TYPE_UNKNOWN = 0;

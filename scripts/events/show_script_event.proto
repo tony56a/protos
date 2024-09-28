@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.events";
+
+package com.zharguy.protos.scripts.events;
+
+import "scripts/enums/script_type.proto";
+import "scripts/models/script_guest_character.proto";
+import "scripts/models/show_script_line.proto";
+
+message ShowScriptEvent {
+  string topic = 1;
+  enums.ScriptType script_type = 2;
+  models.ScriptGuestCharacter guest_character = 3;
+  string requesting_user_ext_id = 4;
+  repeated models.ShowScriptLine lines = 10000;
+}

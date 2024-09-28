@@ -5,9 +5,8 @@ option java_package = "com.zharguy.protos.scripts.enums";
 
 package com.zharguy.protos.scripts.enums;
 
-enum ScriptType {
-  SCRIPT_TYPE_UNKNOWN = 0;
-  SCRIPT_TYPE_PODCAST = 1;
-  SCRIPT_TYPE_RAP_BATTLE = 2;
-  SCRIPT_TYPE_BUSINESS_TALK = 3;
+enum CharacterState {
+  CHARACTER_STATE_UNKNOWN = 0;
+  CHARACTER_STATE_NEUTRAL = 1;
+  CHARACTER_STATE_SPEAKING = 2;
 }

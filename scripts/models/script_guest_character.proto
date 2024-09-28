@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.zharguy.protos.scripts";
+option java_package = "com.zharguy.protos.scripts.models";
 
-package com.zharguy.protos.scripts;
+package com.zharguy.protos.scripts.models;
 
 import "google/protobuf/wrappers.proto";
 import "scripts/enums/speaker_voice_type.proto";
@@ -11,6 +11,6 @@ import "scripts/enums/character_type.proto";
 
 message ScriptGuestCharacter {
   google.protobuf.StringValue name = 1;
-  scripts.CharacterType character_type = 2;
-  scripts.SpeakerVoiceType speaker_voice_type = 3;
+  enums.CharacterType character_type = 2;
+  enums.SpeakerVoiceType speaker_voice_type = 3;
 }

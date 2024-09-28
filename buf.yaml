@@ -1,0 +1,16 @@
+version: v2
+modules:
+  - path: scripts
+    name: buf.build/zharguy/scripts
+  - path: common
+    name: buf.build/zharguy/common
+
+deps:
+  - buf.build/google/googleapis
+  - buf.build/grpc/grpc
+lint:
+  use:
+    - STANDARD
+breaking:
+  use:
+    - FILE

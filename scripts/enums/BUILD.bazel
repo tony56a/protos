@@ -1,7 +1,7 @@
 proto_library(
-    name = "script_model_proto",
+    name = "script_enums_proto",
     srcs = glob(["*.proto"]),
-    visibility = ["//script:__pkg__"],
+    visibility = ["//visibility:public"],
     deps = [
         "@com_google_protobuf//:struct_proto",
         "@com_google_protobuf//:timestamp_proto",

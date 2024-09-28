@@ -1,0 +1,11 @@
+proto_library(
+    name = "common_models_proto",
+    srcs = glob(["*.proto"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        "//common/enums:common_enums_proto",
+        "@com_google_protobuf//:struct_proto",
+        "@com_google_protobuf//:timestamp_proto",
+        "@com_google_protobuf//:wrappers_proto",
+    ],
+)

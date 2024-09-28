@@ -1,5 +1,6 @@
 load("@rules_jvm_external//:defs.bzl", "java_export")
 load("@rules_jvm_external//:kt_defs.bzl", "kt_jvm_export")
+load("@rules_python//python:packaging.bzl", "py_package", "py_wheel")
 
 library_version = "0.0.1"
 
@@ -8,9 +9,29 @@ java_export(
     srcs = glob(["*.java"]),
     maven_coordinates = "com.zharguy.protos:protos:{}".format(library_version),
     runtime_deps = [
-        "//script:script_service_proto_java_lib",
-        "//script:script_service_proto_kt_grpc_lib",
-        "//script:script_service_proto_kt_lib",
+        "//scripts:script_service_proto_java_lib",
+        "//scripts:script_service_proto_kt_grpc_lib",
+        "//scripts:script_service_proto_kt_lib",
         "@maven//:javax_annotation_javax_annotation_api",
+    ],
+)
+
+py_package(
+    name = "exported_proto_py_pkg",
+    # Only include these Python packages.
+    packages = ["*"],
+    deps = [
+        "//scripts:script_service_py_grpc_lib",
+        "//scripts:script_service_py_proto_lib",
+    ],
+)
+
+py_wheel(
+    name = "exported_proto_py_whl",
+    distribution = "script_service_protos",
+    python_tag = "py3",
+    version = library_version,
+    deps = [
+        ":exported_proto_py_pkg",
     ],
 )

@@ -8,15 +8,24 @@ package com.zharguy.protos.scripts;
 import "scripts/models/script.proto";
 
 service ScriptService {
-  rpc CreateScript (CreateScriptRequest) returns (Script) {}
-  rpc GetScript (GetScriptRequest) returns (Script) {}
-  rpc DeleteScript (GetScriptRequest) returns (Script) {}
+  rpc CreateScript (CreateScriptRequest) returns (models.Script) {}
+  rpc GetScript (GetScriptRequest) returns (models.Script) {}
+  rpc DeleteScript (DeleteScriptRequest) returns (models.Script) {}
+  rpc GenerateScript(GenerateScriptRequest) returns (models.Script) {}
 }
 
 message CreateScriptRequest {
-  Script script = 1;
+  models.Script script = 1;
 }
 
 message GetScriptRequest {
+  string id = 1;
+}
+
+message DeleteScriptRequest {
+  string id = 1;
+}
+
+message GenerateScriptRequest {
   string id = 1;
 }

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.enums";
+
+package com.zharguy.protos.scripts.enums;
+
+enum ScriptCameraPosition {
+  SCRIPT_CAMERA_POSITION_UNKNOWN = 0;
+  SCRIPT_CAMERA_POSITION_HOST = 1;
+  SCRIPT_CAMERA_POSITION_GUEST = 2;
+  SCRIPT_CAMERA_POSITION_SCENE_OVERVIEW = 3;
+}
