@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.enums.v1";
+
+package com.zharguy.protos.scripts.enums.v1;
+
+// The type of voice for the character
+enum SpeakerVoiceType {
+  // Unused stub value
+  SPEAKER_VOICE_TYPE_UNSPECIFIED = 0;
+  // Masculine voice
+  SPEAKER_VOICE_TYPE_MALE = 1;
+  // Feminine voice
+  SPEAKER_VOICE_TYPE_FEMALE = 2;
+}

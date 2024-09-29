@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.enums.v1";
+
+package com.zharguy.protos.scripts.enums.v1;
+
+// The character in a script
+enum CharacterType {
+  // Unused stub value
+  CHARACTER_TYPE_UNSPECIFIED = 0;
+  // Human/Normal character
+  CHARACTER_TYPE_NORMAL = 1;
+  // Skeleton character
+  CHARACTER_TYPE_SKELETON = 2;
+  // Robot character
+  CHARACTER_TYPE_ROBOT = 3;
+}

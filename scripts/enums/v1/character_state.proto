@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.enums.v1";
+
+package com.zharguy.protos.scripts.enums.v1;
+
+// The pose/state of the character during a script line
+enum CharacterState {
+  // Unused stub value
+  CHARACTER_STATE_UNSPECIFIED = 0;
+  // The character is in a neutral state (no movement/animation)
+  CHARACTER_STATE_NEUTRAL = 1;
+  // The character should be in a pose/state that indicates that they're talking/singing
+  CHARACTER_STATE_SPEAKING = 2;
+}

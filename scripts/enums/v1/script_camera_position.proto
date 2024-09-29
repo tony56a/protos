@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.enums.v1";
+
+package com.zharguy.protos.scripts.enums.v1;
+
+// The camera used/position during a script line
+enum ScriptCameraPosition {
+  // Unused stub value
+  SCRIPT_CAMERA_POSITION_UNSPECIFIED = 0;
+  // The camera should be positioned to focus on the host
+  SCRIPT_CAMERA_POSITION_HOST = 1;
+  // The camera should be positioned to focus on the guest
+  SCRIPT_CAMERA_POSITION_GUEST = 2;
+  // The camera should be positioned overlooking the entire scene
+  SCRIPT_CAMERA_POSITION_SCENE_OVERVIEW = 3;
+}

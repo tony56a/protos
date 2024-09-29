@@ -1,9 +1,10 @@
 proto_library(
-    name = "common_models_proto",
+    name = "script_event_proto",
     srcs = glob(["*.proto"]),
     visibility = ["//visibility:public"],
     deps = [
-        "//common/enums:common_enums_proto",
+        "//scripts/enums/v1:script_enums_proto",
+        "//scripts/models/v1:script_model_proto",
         "@com_google_protobuf//:struct_proto",
         "@com_google_protobuf//:timestamp_proto",
         "@com_google_protobuf//:wrappers_proto",

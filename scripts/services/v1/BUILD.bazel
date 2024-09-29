@@ -4,9 +4,9 @@ package(default_visibility = ["//visibility:public"])
 
 service_proto_export(
     "script_service",
-    srcs = glob(["**/*.proto"]),
+    srcs = glob(["*.proto"]),
     proto_deps = [
-        "//scripts/events:script_event_proto",
-        "//scripts/models:script_model_proto",
+        "//scripts/events/v1:script_event_proto",
+        "//scripts/models/v1:script_model_proto",
     ],
 )

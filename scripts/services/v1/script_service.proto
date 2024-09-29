@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.v1";
+
+package com.zharguy.protos.scripts.v1;
+
+import "models/v1/script.proto";
+import "models/v1/user.proto";
+
+// Service for managing scripts/playback
+service ScriptService {
+  // Create a script and asynchronously generate contents + initiate playback
+  rpc CreateScript (CreateScriptRequest) returns (CreateScriptResponse) {}
+  // Retrieve a persisted script
+  rpc GetScript (GetScriptRequest) returns (GetScriptResponse) {}
+  // Mark a script for deletion, making it ineligible for generation/playback
+  rpc DeleteScript (DeleteScriptRequest) returns (DeleteScriptResponse) {}
+  // Synchronously generate the contents of a script + initiate playback
+  // Typically only used for state remediation/replay of scripts
+  rpc GenerateScript(GenerateScriptRequest) returns (GenerateScriptResponse) {}
+}
+
+// Payload for a create script request
+message CreateScriptRequest {
+  // The payload of the script to create
+  models.v1.Script script = 1;
+}
+
+// Payload for a retrieve script request
+message GetScriptRequest {
+  // The ID of the script to retrieve
+  string id = 1;
+}
+
+// Payload for a delete script request
+message DeleteScriptRequest {
+  // The ID of the script to delete
+  string id = 1;
+}
+
+// Payload for a generate script request
+message GenerateScriptRequest {
+  // The ID of the script to publish
+  string id = 1;
+  // The user making the request
+  models.v1.User requesting_user = 2;
+}
+
+// Payload for a create script response
+message CreateScriptResponse {
+  // The script that was created
+  // Note: Content fields may not be populated
+  models.v1.Script script = 1;
+}
+
+// Payload for a retrieve script response
+message GetScriptResponse {
+  // The script that was retrieved
+  models.v1.Script script = 1;
+}
+
+// Payload for a delete script response
+message DeleteScriptResponse {
+}
+
+// Payload for a generate script response
+message GenerateScriptResponse {
+  // The script that was generated
+  models.v1.Script script = 1;
+}

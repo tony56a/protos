@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.enums.v1";
+
+package com.zharguy.protos.scripts.enums.v1;
+
+// Represents where the a script requesting user was originally from/created
+enum ExtUserSource {
+  // Unused stub value
+  EXT_USER_SOURCE_UNSPECIFIED = 0;
+  // Admin/Manually created user
+  EXT_USER_SOURCE_ADMIN = 1;
+  // User was from Discord
+  EXT_USER_SOURCE_DISCORD = 2;
+  // User was from Twitch
+  EXT_USER_SOURCE_TWITCH = 3;
+}

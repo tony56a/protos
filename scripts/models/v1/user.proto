@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.models.v1";
+
+package com.zharguy.protos.scripts.models.v1;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "enums/v1/ext_user_source.proto";
+
+// Represents a user of the script service
+message User {
+  // The service-internal ID of the user
+  google.protobuf.StringValue id = 1;
+  // The externally-provided ID of the user
+  string ext_id = 2;
+  // Where the user originated from
+  enums.v1.ExtUserSource user_source = 3;
+  // When the user representation was created in the service
+  google.protobuf.Timestamp created_at = 4;
+}

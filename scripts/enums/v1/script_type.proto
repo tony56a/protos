@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.enums.v1";
+
+package com.zharguy.protos.scripts.enums.v1;
+
+// The type of show the script represents
+enum ScriptType {
+  // Unused stub value
+  SCRIPT_TYPE_UNSPECIFIED = 0;
+  // 1:1 Podcast in a studio
+  SCRIPT_TYPE_PODCAST = 1;
+  // 1:1 Rap Battle
+  SCRIPT_TYPE_RAP_BATTLE = 2;
+  // Single person giving a speech behind a desk
+  SCRIPT_TYPE_BUSINESS_TALK = 3;
+}

@@ -9,9 +9,9 @@ java_export(
     srcs = glob(["*.java"]),
     maven_coordinates = "com.zharguy.protos:protos:{}".format(library_version),
     runtime_deps = [
-        "//scripts:script_service_proto_java_lib",
-        "//scripts:script_service_proto_kt_grpc_lib",
-        "//scripts:script_service_proto_kt_lib",
+        "//scripts/services/v1:script_service_proto_java_lib",
+        "//scripts/services/v1:script_service_proto_kt_grpc_lib",
+        "//scripts/services/v1:script_service_proto_kt_lib",
         "@maven//:javax_annotation_javax_annotation_api",
     ],
 )
@@ -21,8 +21,8 @@ py_package(
     # Only include these Python packages.
     packages = ["*"],
     deps = [
-        "//scripts:script_service_py_grpc_lib",
-        "//scripts:script_service_py_proto_lib",
+        "//scripts/services/v1:script_service_py_grpc_lib",
+        "//scripts/services/v1:script_service_py_proto_lib",
     ],
 )
 

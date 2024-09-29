@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.events.v1";
+
+package com.zharguy.protos.scripts.events.v1;
+
+import "scripts/enums/v1/script_type.proto";
+import "scripts/models/v1/script_guest_character.proto";
+import "scripts/models/v1/show_script_line.proto";
+import "scripts/models/v1/user.proto";
+
+// Event payload for a show with a script,
+// should only be consumed by front-end clients,
+// which will play the show based on the event contents
+message ShowScriptEvent {
+  // The topic the script is about
+  string topic = 1;
+  // The type of show the event represents
+  enums.v1.ScriptType script_type = 2;
+  // The guest character
+  models.v1.ScriptGuestCharacter guest_character = 3;
+  // The user the requested the generated script/show
+  models.v1.User requesting_user = 4;
+  // the content (text/audio/character + camera poses) of the script/show
+  repeated models.v1.ShowScriptLine lines = 10000;
+}

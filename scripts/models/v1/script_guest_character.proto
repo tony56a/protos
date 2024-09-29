@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.models.v1";
+
+package com.zharguy.protos.scripts.models.v1;
+
+import "google/protobuf/wrappers.proto";
+import "enums/v1/speaker_voice_type.proto";
+import "enums/v1/character_type.proto";
+
+// Attributes of a guest character in a script
+message ScriptGuestCharacter {
+  // The name of the guest, will be generated if not present
+  google.protobuf.StringValue name = 1;
+  // The type of character (normal human, skeleton, robot, etc)
+  enums.v1.CharacterType character_type = 2;
+  // The type of voice(masculine, feminine) of the character
+  enums.v1.SpeakerVoiceType speaker_voice_type = 3;
+}

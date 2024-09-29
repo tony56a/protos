@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.models.v1";
+
+package com.zharguy.protos.scripts.models.v1;
+
+import "enums/v1/script_camera_position.proto";
+import "enums/v1/character_state.proto";
+
+// The contents of a line in a show, with audio/text content
+// Should only consumed by front-end clients
+message ShowScriptLine {
+  // The character(host, guest) that is speaking
+  string speaker = 1;
+  // The content of the character's speech
+  string content = 2;
+  // Where the camera is positioned when the line is playing
+  enums.v1.ScriptCameraPosition position = 3;
+  // What the state of the host is when the line is playing
+  enums.v1.CharacterState host_state = 4;
+  // What the state of the guest is when the line is playing
+  enums.v1.CharacterState guest_state = 5;
+  // The bytes of the audio content representing the speech of line played
+  // Will be WAV format unless otherwise specified
+  bytes audio_content = 6;
+}
