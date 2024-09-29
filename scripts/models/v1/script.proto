@@ -7,10 +7,10 @@ package com.zharguy.protos.scripts.models.v1;
 
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
-import "scripts/enums/v1/script_type.proto";
-import "scripts/models/v1/script_guest_character.proto";
-import "scripts/models/v1/script_content_line.proto";
-import "scripts/models/v1/user.proto";
+import "enums/v1/script_type.proto";
+import "models/v1/script_guest_character.proto";
+import "models/v1/script_content_line.proto";
+import "models/v1/user.proto";
 
 // The script for a show
 message Script {

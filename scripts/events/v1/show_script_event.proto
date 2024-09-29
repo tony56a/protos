@@ -5,10 +5,10 @@ option java_package = "com.zharguy.protos.scripts.events.v1";
 
 package com.zharguy.protos.scripts.events.v1;
 
-import "scripts/enums/v1/script_type.proto";
-import "scripts/models/v1/script_guest_character.proto";
-import "scripts/models/v1/show_script_line.proto";
-import "scripts/models/v1/user.proto";
+import "enums/v1/script_type.proto";
+import "models/v1/script_guest_character.proto";
+import "models/v1/show_script_line.proto";
+import "models/v1/user.proto";
 
 // Event payload for a show with a script,
 // should only be consumed by front-end clients,
