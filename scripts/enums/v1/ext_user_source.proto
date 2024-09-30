@@ -15,4 +15,6 @@ enum ExtUserSource {
   EXT_USER_SOURCE_DISCORD = 2;
   // User was from Twitch
   EXT_USER_SOURCE_TWITCH = 3;
+  // User is an automation
+  EXT_USER_SOURCE_AUTOMATION = 4;
 }
