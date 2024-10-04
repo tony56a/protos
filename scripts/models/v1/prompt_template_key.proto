@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.models.v1";
+
+package com.zharguy.protos.scripts.models.v1;
+
+import "enums/v1/script_type.proto";
+import "enums/v1/llm_model.proto";
+
+// A template used for the prompt to generate scripts
+message PromptTemplateKey {
+  // The LLM model of a prompt template
+  enums.v1.LLMModel llm_model = 1;
+  // The script type of a prompt template
+  enums.v1.LLMModel script_type = 2;
+}

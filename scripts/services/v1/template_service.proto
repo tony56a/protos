@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.v1";
+
+package com.zharguy.protos.scripts.v1;
+
+import "models/v1/prompt_template.proto";
+import "models/v1/prompt_template_key.proto";
+
+// Service for managing script generation templates
+service TemplateService {
+  // Create a template and asynchronously generate contents + initiate playback
+  rpc CreateTemplate (CreateTemplateRequest) returns (CreateTemplateResponse) {}
+  // Retrieve either a specific template, or the latest revision for a given compound key
+  rpc GetTemplate (GetTemplateRequest) returns (GetTemplateResponse) {}
+  // Mark a template for deletion, making it ineligible for generation
+  rpc DeleteTemplate (DeleteTemplateRequest) returns (DeleteTemplateResponse) {}
+}
+
+// Payload for a create template request
+message CreateTemplateRequest {
+  // The payload of the template to create
+  models.v1.PromptTemplate template = 1;
+}
+
+// Payload for a retrieve template request
+message GetTemplateRequest {
+  // The identifier used to query for a template
+  oneof template_identifier {
+    // The ID of the template to retrieve
+    string id = 1;
+    // The compound key grouping for templates (llm model + script type)
+    models.v1.PromptTemplateKey prompt_template_key = 2;
+  }
+}
+
+// Payload for a delete template request
+message DeleteTemplateRequest {
+  // The ID of the template to delete
+  string id = 1;
+}
+
+// Payload for a create template response
+message CreateTemplateResponse {
+  // The template that was created
+  models.v1.PromptTemplate template = 1;
+}
+
+// Payload for a retrieve template response
+message GetTemplateResponse {
+  // The template that was retrieved
+  models.v1.PromptTemplate template = 1;
+}
+
+// Payload for a delete template response
+message DeleteTemplateResponse {
+}

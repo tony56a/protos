@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.enums.v1";
+
+package com.zharguy.protos.scripts.enums.v1;
+
+// Represents an LLM model used for generation purposes
+enum LLMModel {
+  // Unused stub value
+  LLM_MODEL_UNSPECIFIED = 0;
+  // Llama 3.2 90B
+  LLM_MODEL_LLAMA32_90B = 1;
+  // Llama 3.1 70B
+  LLM_MODEL_LLAMA31_70B = 2;
+  // Llama 3.1 8B
+  LLM_MODEL_LLAMA31_8B = 3;
+  // Llama 3 70B
+  LLM_MODEL_LLAMA3_70B = 4;
+  // Llama 3 8B
+  LLM_MODEL_LLAMA3_8B = 5;
+}
