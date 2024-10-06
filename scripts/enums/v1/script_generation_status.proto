@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zharguy.protos.scripts.enums.v1";
+
+package com.zharguy.protos.scripts.enums.v1;
+
+// The outcome of a script generation request
+enum ScriptGenerationStatus {
+  // Unused stub value
+  SCRIPT_GENERATION_STATUS_UNSPECIFIED = 0;
+  // The script generation succeeded
+  SCRIPT_GENERATION_STATUS_SUCCEEDED = 1;
+  // The script generation failed during the script generation process
+  SCRIPT_GENERATION_STATUS_FAILED_SCRIPT = 2;
+  // The script generation failed during the audio generation process
+  SCRIPT_GENERATION_STATUS_FAILED_AUDIO = 3;
+}
