@@ -19,4 +19,6 @@ message ScriptGenerationStatusEvent {
   google.protobuf.StringValue message = 3;
   // The user that originally requested the script
   models.v1.User script_request_user = 4;
+  // The topic the generated show is about
+  string topic = 5;
 }
