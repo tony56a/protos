@@ -16,7 +16,7 @@ service ScriptService {
   rpc GetScript (GetScriptRequest) returns (GetScriptResponse) {}
   // Mark a script for deletion, making it ineligible for generation/playback
   rpc DeleteScript (DeleteScriptRequest) returns (DeleteScriptResponse) {}
-  // Synchronously generate the contents of a script + initiate playback
+  // Generate the contents of a script + initiate playback
   // Typically only used for state remediation/replay of scripts
   rpc GenerateScript(GenerateScriptRequest) returns (GenerateScriptResponse) {}
 }
